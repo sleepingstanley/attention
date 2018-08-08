@@ -1,0 +1,4 @@
+{
+  "host": "<local ip address of phillips hue bridge>",
+  "user": "<phillips hue bridge user>"
+}

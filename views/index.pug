@@ -1,0 +1,29 @@
+html(class=time?'':'disconnected')
+  head
+    title= title
+    link(rel='stylesheet', href='/static/style.css')
+  body(class=time?'':'disconnected')
+    h1 I understand, you need your attention!
+    if time
+      if status
+        | We last checked up on him #{time}
+        br
+        | So, what does he think is so important that he doesn't have attention for you?
+        hr
+        each item in status
+          label= item.name
+          input(type='checkbox' checked=item.checked onclick='return false')
+          br
+        hr
+        h2 We both know that you're more important than all that, so go ahead and
+        a(href='/lights') Claim your attention
+      else
+        | I uhhh
+        i= ' *kinda* '
+        | forgot to check up on Stanley... since like... #{time}
+        br
+        | We're doing that now!!!
+        br
+        a(href='/') Refresh status
+    else
+      h2 So uh... we tried checking in on Stanley, but his computer seems to be off...

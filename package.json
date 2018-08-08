@@ -1,0 +1,17 @@
+{
+  "name": "attention",
+  "version": "1.0.0",
+  "description": "for when attention is needed",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "pug": "^2.0.3",
+    "socket.io-client": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "sleepingstanley"
+}
