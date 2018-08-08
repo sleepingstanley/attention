@@ -1,4 +1,11 @@
 {
   "host": "<local ip address of phillips hue bridge>",
-  "user": "<phillips hue bridge user>"
+  "user": "<phillips hue bridge user>",
+  "programs": {
+    "chrome.exe": "Web Browsing",
+    "code.exe": "Programming",
+    "discord.exe": "Chatting with friends (Discord)",
+    "iTunes.exe": "Listening to Apple Music",
+    "FortniteClient-Win64-Shipping.exe": "Playing Fortnite"
+  }
 }

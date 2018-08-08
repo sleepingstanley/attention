@@ -21,25 +21,20 @@ let isRunning = (query, cb) => {
 }
 
 io.on('connection', client => {
-  client.on('needattention', data => {
+  client.on('needattention', () => {
     flashLights(3);
   });
 
-  client.on('whatstatus', data => {
-    isRunning('chrome.exe').then(chromeStatus => {
-      isRunning('code.exe').then(vsCodeStatus => {
-        isRunning('discord.exe').then(discordStatus => {
-          isRunning('iTunes.exe').then(iTunesStatus => {
-            client.emit('whatstatus', [
-              { name: 'Web Browsing', checked: chromeStatus },
-              { name: 'Programming', checked: vsCodeStatus },
-              { name: 'Chatting with friends (Discord)', checked: discordStatus },
-              { name: 'Listening to Apple Music', checked: iTunesStatus }
-            ]);
-          });
-        });
+  client.on('whatstatus', () => {
+    let keys = Object.keys(config.programs), statuses = [];
+    for (var i = 0; i < keys.length; i++) {
+      let exe = keys[i];
+      isRunning(exe).then(status => {
+        statuses.push({ name: config.programs[exe], checked: status });
+        if (i == keys.length)
+          client.emit('whatstatus', statuses);
       });
-    });
+    }
   });
 });
 
