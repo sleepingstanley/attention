@@ -5,4 +5,4 @@ I'm using Heroku as a platform as a service (PaaS) to host the socket.io client 
 
 I added a few bonus features, such as the ability to see which programs are running. Also, this uses my Phillips hue lamp to flash rather than a raspberry pi & GPIO pins w/ LED. This, of course, gives us more opportunities for customization.
 
-(I programmed this whole thing in about 45 minutes, so it's not exactly the neatest code ever)
+(I programmed this whole thing in about 45 minutes)
